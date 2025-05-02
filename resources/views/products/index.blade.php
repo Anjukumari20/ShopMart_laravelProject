@@ -177,7 +177,7 @@
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <p class="card-text">{{ Str::limit($product->description, 60) }}</p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <span class="price">${{ number_format($product->price, 2) }}</span>
+                                    <span class="price">₹{{ number_format($product->price, 2) }}</span>
                                     <div>
                                         <a href="{{ route('products.show', $product->slug) }}" class="btn btn-sm btn-primary">
                                             <i class="fas fa-eye me-1"></i> View

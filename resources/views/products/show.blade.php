@@ -276,8 +276,8 @@
                     </div>
 
                     <div class="mb-4">
-                        <span class="product-price">${{ number_format($product->price, 2) }}</span>
-                        <span class="text-muted text-decoration-line-through ms-2">${{ number_format($product->price * 1.2, 2) }}</span>
+                        <span class="product-price">₹{{ number_format($product->price, 2) }}</span>
+                        <span class="text-muted text-decoration-line-through ms-2">₹{{ number_format($product->price * 1.2, 2) }}</span>
                         <span class="badge bg-danger ms-2">20% OFF</span>
                     </div>
 

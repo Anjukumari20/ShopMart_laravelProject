@@ -8,7 +8,7 @@
             <hr>
         </div>
     </div>
-    
+
     <form action="{{ route('orders.store') }}" method="POST">
         @csrf
         <div class="row">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">Payment Method</h5>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
@@ -105,18 +105,18 @@
                                         <tr>
                                             <td>{{ Str::limit($item->product->name, 20) }}</td>
                                             <td>{{ $item->quantity }}</td>
-                                            <td class="text-end">${{ number_format($item->product->price * $item->quantity, 2) }}</td>
+                                            <td class="text-end">₹{{ number_format($item->product->price * $item->quantity, 2) }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <hr>
-                        
+
                         <div class="d-flex justify-content-between mb-3">
                             <span>Subtotal:</span>
-                            <span>${{ number_format($total, 2) }}</span>
+                            <span>₹{{ number_format($total, 2) }}</span>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
                             <span>Shipping:</span>
@@ -125,9 +125,9 @@
                         <hr>
                         <div class="d-flex justify-content-between mb-3">
                             <strong>Total:</strong>
-                            <strong>${{ number_format($total, 2) }}</strong>
+                            <strong>₹{{ number_format($total, 2) }}</strong>
                         </div>
-                        
+
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-lock me-2"></i> Place Order

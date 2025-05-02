@@ -8,7 +8,7 @@
             <hr>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-12">
             @if($orders->count() > 0)
@@ -53,7 +53,7 @@
                                                     <span class="badge bg-danger">Failed</span>
                                                 @endif
                                             </td>
-                                            <td>${{ number_format($order->total_amount, 2) }}</td>
+                                            <td>₹{{ number_format($order->total_amount, 2) }}</td>
                                             <td>
                                                 <a href="{{ route('orders.show', $order->id) }}" class="btn btn-sm btn-primary">
                                                     <i class="fas fa-eye"></i> View
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="mt-4">
                     {{ $orders->links() }}
                 </div>

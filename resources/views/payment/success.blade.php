@@ -13,10 +13,10 @@
                     <p class="lead">Thank you for your purchase. Your order has been successfully processed.</p>
                     <p><strong>Order ID:</strong> #{{ $order->id }}</p>
                     <p><strong>Transaction ID:</strong> {{ $order->transaction_id }}</p>
-                    <p><strong>Total Amount:</strong> ${{ number_format($order->total_amount, 2) }}</p>
-                    
+                    <p><strong>Total Amount:</strong> ₹{{ number_format($order->total_amount, 2) }}</p>
+
                     <hr class="my-4">
-                    
+
                     <h4 class="mb-3">Order Summary</h4>
                     <div class="table-responsive">
                         <table class="table">
@@ -33,20 +33,20 @@
                                     <tr>
                                         <td>{{ $item->product->name }}</td>
                                         <td>{{ $item->quantity }}</td>
-                                        <td>${{ number_format($item->price, 2) }}</td>
-                                        <td>${{ number_format($item->price * $item->quantity, 2) }}</td>
+                                        <td>₹{{ number_format($item->price, 2) }}</td>
+                                        <td>₹{{ number_format($item->price * $item->quantity, 2) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th colspan="3" class="text-end">Total:</th>
-                                    <th>${{ number_format($order->total_amount, 2) }}</th>
+                                    <th>₹{{ number_format($order->total_amount, 2) }}</th>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
-                    
+
                     <div class="mt-4">
                         <a href="{{ route('orders.show', $order->id) }}" class="btn btn-primary me-2">
                             <i class="fas fa-eye me-2"></i> View Order Details
